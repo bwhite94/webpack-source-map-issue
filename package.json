@@ -1,0 +1,28 @@
+{
+  "name": "webpack-source-map-issue",
+  "version": "0.0.1",
+  "description": "This demonstrates an issue with webpack source map namespaces",
+  "main": "index.js",
+  "scripts": {
+    "build": "node node_modules/webpack/bin/webpack.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwhite94/webpack-source-map-issue.git"
+  },
+  "keywords": [
+    "webpack",
+    "nodejs"
+  ],
+  "author": "https://github.com/bwhite94/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwhite94/webpack-source-map-issue/issues"
+  },
+  "homepage": "https://github.com/bwhite94/webpack-source-map-issue#readme",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
