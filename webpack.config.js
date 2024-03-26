@@ -1,43 +1,35 @@
 const path = require('path');
+
 const srcPath = path.join(__dirname, './src/');
 const distPath = path.join(__dirname, './dist/');
 
-module.exports = {
+const entries = {
+    'entry-a': 'entry-a',
+    'entry-b': 'entry-b'
+};
 
-    target: 'web',
-
+const configs = Object.keys(entries).map(entryName => ({
     entry: {
-
-        'entry-a': [path.join(srcPath, 'entry-a')],
-
-        'entry-b': [path.join(srcPath, 'entry-a')],
-
+        [entryName]: path.join(srcPath, entries[entryName])
     },
-
     output: {
-
         path: distPath,
-
-        filename: 'scripts/[name]-bundle.js',
-
-        library: 'library-[name]',
-
+        filename: `scripts/${entryName}-bundle.js`,
+        library: `library-${entryName}`,
         libraryTarget: 'window'
-
     },
-
     module: {
-
         rules: [
             {
-                test: /\.js(\?.*$|$)/, use: ['file-loader'], include: srcPath, exclude: '/node_modules/'
+                test: /\.js(\?.*$|$)/,
+                use: ['file-loader'],
+                include: srcPath,
+                exclude: '/node_modules/'
             }
         ]
-
     },
-
     devtool: 'source-map',
-
     mode: 'development'
+}));
 
-}
+module.exports = configs;
