@@ -31,5 +31,4 @@ const configs = Object.keys(entries).map(entryName => ({
     devtool: 'source-map',
     mode: 'development'
 }));
-
-module.exports = configs;
+module.exports = configs
